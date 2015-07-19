@@ -186,18 +186,8 @@ function close()
 
 ?>
 <!doctype html">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:og="http://ogp.me/ns#"
-      xmlns:fb="http://www.facebook.com/2008/fbml">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <link href='styles.css' type='text/css' rel='stylesheet'/>
-<title>Doorlopend genummerde labels met barcodes.</title>
-<meta name='description' contents='Doorlopend genummerde labels met barcodes voor stickers en stickervellen van iedere maat.'>
-<!-- Open Graph Meta Tags by: www.MetaTagGenerator.org -->         
-<meta property="og:title" content="Doorlopend genummerde labels met barcodes voor stickers en stickervellen van iedere maat.">
-<meta property="og:type" content="blog">
-<meta property="og:url" content="http://nr8.nl/">
-<meta property="og:site_name" content="nr8.nl">
-<meta property="og:description" content="Alles is mogelijk of onmogelijk.">
 <body>
 <div class='noprint'>
 	<p><br/>Marge rondom: 10mm. Op snijlijn: 2mm beide kanten.</p>
