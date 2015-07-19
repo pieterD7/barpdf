@@ -190,12 +190,12 @@ function close()
 <link href='styles.css' type='text/css' rel='stylesheet'/>
 <body>
 <div class='noprint'>
-	<p><br/>Marge rondom: 10mm. Op snijlijn: 2mm beide kanten.</p>
+	<p><br/>Marge rondom: 10 mm. Op snijlijn: 2 mm beide kanten.</p>
 	<form action='?'>
 	Rijen : <input type='number' name='rows' value='<?php echo $rows;?>'> 
 	Kolommen: <input type='number' name='columns' value='<?php echo $columns;?>'><br/>
 	Papier: <input type='number' name='width' value='<?php echo $width;?>'> x 
-	<input type='number' name='height' value='<?php echo $height;?>'>
+	<input type='number' name='height' value='<?php echo $height;?>'>mm
 	<input type="submit" value='Ok'>
 	</form>
 </div>
