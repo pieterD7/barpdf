@@ -1,0 +1,43 @@
+body{
+	margin:0;
+}
+
+.layout{
+	box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+	border:10mm solid white;		
+}
+
+.label{
+	box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+	border:2mm solid white;	
+}
+
+.barcode-text{
+	letter-spacing:0.1em;
+	margin:0;	
+}
+
+.barcode-text-extra{
+	font-size:9pt;
+	letter-spacing:0.1em;	
+	margin:0;
+}
+.barcode-text-extra::after{
+	content: "example.com";
+}
+@media print {
+	.noprint{
+		display: none;
+	}
+}
+.noprint{
+	margin:1em;
+}
+input[type=number]{
+	width:4em;
+	margin:0.3em;
+}
