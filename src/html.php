@@ -192,10 +192,10 @@ function close()
 <div class='noprint'>
 	<p><br/>Marge rondom: 10mm. Op snijlijn: 2mm beide kanten.</p>
 	<form action='?'>
-	Rijen : <input type='number' name='rows' value='<?php if (!empty($_GET['rows'])) echo $_GET['rows']; else echo "13";?>'> 
-	Kolommen: <input type='number' name='columns' value='<?php if (!empty($_GET['columns'])) echo $_GET['columns']; else echo "5";?>'><br/>
-	Papier: <input type='number' name='width' value='<?php if (!empty($_GET['width'])) echo $_GET['width']; else echo "210";?>'> x 
-	<input type='number' name='height' value='<?php if (!empty($_GET['height'])) echo $_GET['height']; else echo "297";?>'>
+	Rijen : <input type='number' name='rows' value='<?php echo $rows;?>'> 
+	Kolommen: <input type='number' name='columns' value='<?php echo $columns;?>'><br/>
+	Papier: <input type='number' name='width' value='<?php echo $width;?>'> x 
+	<input type='number' name='height' value='<?php echo $height;?>'>
 	<input type="submit" value='Ok'>
 	</form>
 </div>
