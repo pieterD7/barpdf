@@ -192,8 +192,7 @@ function echoDefault($var, $val)
 	if(!empty($_GET[$var]))
 		echo $_GET[$var];
 	else echo $val;
-
-
+}
 ?>
 <!doctype html">
 <html xmlns="http://www.w3.org/1999/xhtml">
