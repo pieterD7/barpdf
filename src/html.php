@@ -189,10 +189,10 @@ function close()
  */
 function echoDefault($var, $val)
 {
-	if(!empty($_GET['var'])) 
-			echo $_GET['var']; 
+	if(!empty($_GET[$var]))
+		echo $_GET[$var];
 	else echo $val;
-}
+
 
 ?>
 <!doctype html">
