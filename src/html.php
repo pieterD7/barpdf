@@ -184,6 +184,16 @@ function close()
 	writeIniFile( array("startWith" => $barcodeNumber ));
 }
 
+/**
+ * Echo the value of $_GET[$var], else $val
+ */
+function echoDefault($var, $val)
+{
+	if(!empty($_GET['var'])) 
+			echo $_GET['var']; 
+	else echo $val;
+}
+
 ?>
 <!doctype html">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -192,10 +202,10 @@ function close()
 <div class='noprint'>
 	<p><br/>Marge rondom: 10 mm. Op snijlijn: 2 mm beide kanten.</p>
 	<form action='?'>
-	Rijen : <input type='number' name='rows' value='<?php if (!empty($_GET['rows'])) echo $_GET['rows']; else echo "13";?>'> 
-	Kolommen: <input type='number' name='columns' value='<?php if (!empty($_GET['columns'])) echo $_GET['columns']; else echo "5";?>'><br/>
-	Papier: <input type='number' name='width' value='<?php if (!empty($_GET['width'])) echo $_GET['width']; else echo "210";?>'> x 
-	<input type='number' name='height' value='<?php if (!empty($_GET['height'])) echo $_GET['height']; else echo "297";?>mm
+	Rijen : <input type='number' name='rows' value='<?php echoDefault('rows', 13);?>'> 
+	Kolommen: <input type='number' name='columns' value='<?php echoDefault('columns', 5);?>'><br/>
+	Papier: <input type='number' name='width' value='<?php echoDefault('width', 210);?>'> x 
+	<input type='number' name='height' value='<?php echoDefault('height', 297);?>'>mm
 	<input type="submit" value='Ok'>
 	</form>
 </div>
