@@ -197,9 +197,68 @@ function echoDefault($var, $val)
 <!doctype html">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <link href='styles.css' type='text/css' rel='stylesheet'/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type='text/javascript'>
+
+var clipX = 0, 
+    clipY = 0,
+    clipping = false,
+    errorString = " => "
+
+function toggleDetectClipping()
+{
+	if(clipping)
+	{
+		clipping = false
+		$(".label").css("border-color", "white")
+	}
+	else
+	{
+		$("#clipping").html("")
+		detectClipping()
+	}
+}
+        
+function detectClipping()
+{
+	var s =  $(".label")
+		
+	var lblW = s.prop('scrollWidth'),
+	    lblH = s.prop('scrollHeight')
+		
+	if(lblW != s.width())
+	{
+		clipping = true
+		clipX = lblW - s.width()
+		s.css({"border-right-color": "red"})
+	}
+	else
+	{
+		s.css({"border-right-color": "white"})
+	}
+
+	if(lblH != s.height())
+	{
+		clipping = true
+		clipY = lblH - s.height()
+		s.css({"border-bottom-color": "red"})
+	
+	}
+	else
+	{
+		s.css({"border-bottom-color": "white"})
+	}
+
+	if(clipping)
+		$("#clipping").html(errorString + "(" + clipX + "," + clipY + ")")
+}
+
+
+
+</script>
 <body>
 <div class='noprint'>
-	<p><br/>Marge rondom: 10 mm. Op snijlijn: 2 mm beide kanten.</p>
+	<p><br/>Marge rondom: 10 mm. Op snijlijn: 2 mm beide kanten. <a href='javascript:toggleDetectClipping()'>Detecteer clipping <span id='clipping'></span></a></p>
 	<form action='?'>
 	Rijen : <input type='number' name='rows' value='<?php echoDefault('rows', 13);?>'> 
 	Kolommen: <input type='number' name='columns' value='<?php echoDefault('columns', 5);?>'><br/>
