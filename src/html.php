@@ -218,7 +218,7 @@ function toggleDetectClipping()
 		detectClipping()
 	}
 }
-        
+
 function detectClipping()
 {
 	var s =  $(".label")
@@ -250,7 +250,7 @@ function detectClipping()
 	}
 
 	if(clipping)
-		$("#clipping").html(errorString + "(" + clipX + "," + clipY + ")")
+		$("#clipping").html(errorString + "(" + clipX + "px," + clipY + "px)")
 }
 
 
