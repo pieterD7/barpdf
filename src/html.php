@@ -108,6 +108,18 @@ function addBarcode()
 }
 
 /**
+ * Specifies the maximun value to be set by user
+ */
+function maxValue($var, $val)
+{
+	if(isset($_REQUEST[$var])
+		&& $_REQUEST[$var] < min($_REQUEST[$var], $val))
+			return true;
+		else if(isset($_REQUEST[$var]))
+			return false;
+		return true;
+}
+/**
  * Allows a GET request to override some globals
  */
 function parseRequestPayload()
@@ -119,7 +131,10 @@ function parseRequestPayload()
 	
 	// Parse request payload
 	foreach ($_REQUEST as $k => $v)
-		if(!empty($v))
+		if(!empty($v)
+			&& maxValue("columns", 20)
+			&& maxValue("rows", 10)
+			)
 			$$k = $v;
 }
 
@@ -189,7 +204,9 @@ function close()
  */
 function echoValueOrDefault($var, $val)
 {
-	if(!empty($_GET[$var]))
+	if(!empty($_GET[$var]) 
+		&& maxValue("columns", 20)
+		&& maxValue("rows", 10))
 		echo $_GET[$var];
 	else echo $val;
 }
