@@ -132,8 +132,8 @@ function parseRequestPayload()
 	// Parse request payload
 	foreach ($_REQUEST as $k => $v)
 		if(!empty($v)
-			&& maxValue("columns", 20)
-			&& maxValue("rows", 10)
+			&& maxValue("columns", 10)
+			&& maxValue("rows", 20)
 			)
 			$$k = $v;
 }
@@ -205,8 +205,8 @@ function close()
 function echoValueOrDefault($var, $val)
 {
 	if(!empty($_GET[$var]) 
-		&& maxValue("columns", 20)
-		&& maxValue("rows", 10))
+		&& maxValue("columns", 10)
+		&& maxValue("rows", 20))
 		echo $_GET[$var];
 	else echo $val;
 }
