@@ -187,7 +187,7 @@ function close()
 /**
  * Echo the value of $_GET[$var], else $val
  */
-function echoDefault($var, $val)
+function echoValueOrDefault($var, $val)
 {
 	if(!empty($_GET[$var]))
 		echo $_GET[$var];
@@ -260,10 +260,10 @@ function detectClipping()
 <div class='noprint'>
 	<p><br/>Marge rondom: 10 mm. Op snijlijn: 2 mm beide kanten. <a href='javascript:toggleDetectClipping()'>Detecteer clipping <span id='clipping'></span></a></p>
 	<form action='?'>
-	Rijen : <input type='number' name='rows' value='<?php echoDefault('rows', 13);?>'> 
-	Kolommen: <input type='number' name='columns' value='<?php echoDefault('columns', 5);?>'><br/>
-	Papier: <input type='number' name='width' value='<?php echoDefault('width', 210);?>'> x 
-	<input type='number' name='height' value='<?php echoDefault('height', 297);?>'>mm
+	Rijen : <input type='number' name='rows' value='<?php echoValueOrDefault('rows', 13);?>'> 
+	Kolommen: <input type='number' name='columns' value='<?php echoValueOrDefault('columns', 5);?>'><br/>
+	Papier: <input type='number' name='width' value='<?php echoValueOrDefault('width', 210);?>'> x 
+	<input type='number' name='height' value='<?php echoValueOrDefault('height', 297);?>'>mm
 	<input type="submit" value='Ok'>
 	</form>
 </div>
