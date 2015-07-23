@@ -194,7 +194,7 @@ function echoDefault($var, $val)
 	else echo $val;
 }
 ?>
-<!doctype html">
+<!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <link href='styles.css' type='text/css' rel='stylesheet'/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
